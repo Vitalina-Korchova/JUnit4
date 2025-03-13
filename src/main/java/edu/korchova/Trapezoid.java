@@ -127,11 +127,9 @@ public class Trapezoid {
         return Math.toDegrees(Math.acos(cosTheta));
     }
 
-    //обчислення кута між діагоналями трапеції
-    public double getDiagonalAngle() {
-        double cosTheta = (Math.pow(baseFirst - baseSecond, 2) + Math.pow(sideFirst, 2) -
-                Math.pow(sideSecond, 2)) / (2 * (baseFirst - baseSecond) * sideFirst);
-        return Math.toDegrees(Math.acos(cosTheta));
+    // перевірка чи є трапеція вписаною в коло
+    public boolean isCyclic() {
+        return (baseFirst + baseSecond) == (sideFirst + sideSecond);
     }
 
 }

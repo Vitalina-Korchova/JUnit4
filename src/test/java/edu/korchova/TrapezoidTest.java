@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TrapezoidTest {
 
-    private Trapezoid trapezoid = new Trapezoid(10,6,5,7,7);
+    private Trapezoid trapezoid = new Trapezoid(10,6,5,7,9);
 
     @Test
     public void whenBaseFirst_10_BaseSecond_6_ThenArea_40() {
@@ -22,17 +22,17 @@ public class TrapezoidTest {
     }
 
     @Test
-    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_7_ThenPerimeter_30() {
-        assertEquals(trapezoid.getPerimeter(),30, 0.001 );
+    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_9_ThenPerimeter_32() {
+        assertEquals(trapezoid.getPerimeter(),32, 0.001 );
     }
 
     @Test
-    public void whenSideFirst_7_SideSecond_7_ThenTrapezoidIsIsosceles() {
-        assertEquals(trapezoid.isIsosceles(), true);
+    public void whenSideFirst_7_SideSecond_9_ThenTrapezoidIsNotIsosceles() {
+        assertEquals(trapezoid.isIsosceles(), false);
     }
 
     @Test
-    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_7_Height_5_ThenTrapezoidIsRightAngled() {
+    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_9_Height_5_ThenTrapezoidIsNotRightAngled() {
         assertEquals(trapezoid.isRightAngled(), false);
     }
 
@@ -42,7 +42,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_7_Height_5_ThenTrapezoidIsEquilateral() {
+    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_9_Height_5_ThenTrapezoidIsNotEquilateral() {
         assertEquals(trapezoid.isEquilateral(), false);
     }
 
@@ -57,12 +57,12 @@ public class TrapezoidTest {
     }
 
     @Test
-    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_7_ThenAngleBetweenSides_73() {
-        assertEquals(trapezoid.getAngleBetweenSides(),73.39845040097977, 0.001 );
+    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_9_ThenAngleBetweenSides_106() {
+        assertEquals(trapezoid.getAngleBetweenSides(),106.60154959902025, 0.001 );
     }
 
     @Test
-    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_7_ThenDiagonalAngle_60() {
-        assertEquals(trapezoid.getDiagonalAngle(),73.39845040097977, 0.001 );
+    public void whenBaseFirst_10_BaseSecond_6_SideFirst_7_SideSecond_9_ThenTrapezoidIsCyclic() {
+        assertEquals(trapezoid.isCyclic() ,true);
     }
 }
